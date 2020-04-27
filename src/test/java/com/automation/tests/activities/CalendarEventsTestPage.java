@@ -169,8 +169,9 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         Actions actions = new Actions(driver);
         BrowserUtilities.wait(4);
         actions.moveToElement(calendarEventsPage.time9Pm).click().perform();
-        BrowserUtilities.wait(2);
+        BrowserUtilities.wait(3);
         Assert.assertEquals(calendarEventsPage.getEndTime(), "10:00 PM");
+        test.pass("Time is equals to “10:00 PM verified");
 
     }
 
@@ -203,6 +204,8 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         Assert.assertTrue(calendarEventsPage.endTime.isEnabled());
         Assert.assertTrue(calendarEventsPage.startDate.isDisplayed());
         Assert.assertTrue(calendarEventsPage.endDate.isDisplayed());
+        test.pass("start and end date input boxes are displayed verified");
+
     }
 
     /**
@@ -237,6 +240,8 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         Assert.assertEquals(repeatsSelect.get(1).getText(), "Weekly");
         Assert.assertEquals(repeatsSelect.get(2).getText(), "Monthly");
         Assert.assertEquals(repeatsSelect.get(3).getText(), "Yearly");
+        test.pass("Test is verified");
+
     }
 
     /**
@@ -271,6 +276,7 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         String expected ="Summary: Daily every 1 day";
         String actual = calendarEventsPage.summary.getText()+" "+calendarEventsPage.summary1.getText();
         Assert.assertEquals(actual,expected);
+        test.pass("Test is verified");
     }
     /**
      * Test Case #10
@@ -304,7 +310,7 @@ public class CalendarEventsTestPage extends AbstractTestBase {
                 calendarEventsPage.summary2.getText();
         Assert.assertEquals(actual,expected);
 
-        test.pass("Verified");
+        test.pass("Test is verified");
     }
 
     /**
@@ -344,6 +350,7 @@ public class CalendarEventsTestPage extends AbstractTestBase {
 
         Assert.assertEquals(actual,expected);
 
+        test.pass("Test is verified");
     }
 
     /**
@@ -379,5 +386,6 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         String actual = calendarEventsPage.summary.getText() + " " +
                         calendarEventsPage.summary1.getText();
         Assert.assertEquals(actual,expected);
+        test.pass("Test is verified");
     }
 }
