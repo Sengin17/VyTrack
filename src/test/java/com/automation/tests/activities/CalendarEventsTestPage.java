@@ -386,6 +386,6 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         String actual = calendarEventsPage.summary.getText() + " " +
                         calendarEventsPage.summary1.getText();
         Assert.assertEquals(actual,expected);
-        test.pass("Test is verified");
+        test.pass("Test is Verified");
     }
 }
