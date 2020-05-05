@@ -157,7 +157,7 @@ public class CalendarEventsPage extends AbstractPageBase {
     @FindBy(className = "oro-subtitle")
     public WebElement allCalendarEvents;
 
-    @FindBy(xpath = "//li[text()='9:00 PM']")
+    @FindBy(xpath = "//div[@class='ui-timepicker-wrapper']//ul//li[contains(text(),'9:00 PM')]")
     public WebElement time9Pm;
 
     @FindBy (css ="[id^='oro_calendar_event_form_allDay']")

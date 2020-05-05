@@ -9,10 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.Test;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -165,12 +164,12 @@ public class CalendarEventsTestPage extends AbstractTestBase {
         test = report.createTest("Verify that end time is equals to “10:00 PM”");
         calendarEventsPage.navigateTo("Activities", "Calendar Events");
         calendarEventsPage.clickToCreateCalendarEvent();
-        calendarEventsPage.getStartTime();
-        Actions actions = new Actions(driver);
         BrowserUtilities.wait(4);
-        actions.moveToElement(calendarEventsPage.time9Pm).click().perform();
-        BrowserUtilities.wait(3);
-        Assert.assertEquals(calendarEventsPage.getEndTime(), "10:00 PM");
+        calendarEventsPage.startTime.click();
+        BrowserUtilities.wait(5);
+        calendarEventsPage.time9Pm.click();
+        BrowserUtilities.wait(5);
+        Assert.assertEquals(calendarEventsPage.getEndTime(),"10:00 PM");
         test.pass("Time is equals to “10:00 PM verified");
 
     }
